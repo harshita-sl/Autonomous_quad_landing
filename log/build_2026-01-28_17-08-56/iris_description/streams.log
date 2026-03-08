@@ -1,0 +1,32 @@
+[0.014s] Invoking command in '/home/harshita/quad/build/iris_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/harshita/quad/build/iris_description -- -j12 -l12
+[0.043s] Invoked command in '/home/harshita/quad/build/iris_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/harshita/quad/build/iris_description -- -j12 -l12
+[0.052s] Invoking command in '/home/harshita/quad/build/iris_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/harshita/quad/build/iris_description
+[0.061s] -- Install configuration: ""
+[0.061s] -- Execute custom install script
+[0.062s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/iris_description/description/camera.xacro
+[0.062s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/iris_description/description/gazebo_control.xacro
+[0.062s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/iris_description/description/imu.xacro
+[0.062s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/iris_description/description/inertial_macros.xacro
+[0.062s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/iris_description/description/iris.urdf
+[0.062s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/iris_description/description/robot.urdf.xacro
+[0.062s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/iris_description/description/robot_core.xacro
+[0.062s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/iris_description/meshes/iris.stl
+[0.062s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/iris_description/meshes/iris_prop_ccw.dae
+[0.062s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/iris_description/meshes/iris_prop_cw.dae
+[0.062s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/iris_description/launch/rsp.launch.py
+[0.062s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/ament_index/resource_index/package_run_dependencies/iris_description
+[0.063s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/ament_index/resource_index/parent_prefix_path/iris_description
+[0.063s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/iris_description/environment/ament_prefix_path.sh
+[0.063s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/iris_description/environment/ament_prefix_path.dsv
+[0.063s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/iris_description/environment/path.sh
+[0.063s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/iris_description/environment/path.dsv
+[0.063s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/iris_description/local_setup.bash
+[0.063s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/iris_description/local_setup.sh
+[0.063s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/iris_description/local_setup.zsh
+[0.063s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/iris_description/local_setup.dsv
+[0.063s] -- Symlinking: /home/harshita/quad/install/iris_description/share/iris_description/package.dsv
+[0.072s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/ament_index/resource_index/packages/iris_description
+[0.072s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/iris_description/cmake/iris_descriptionConfig.cmake
+[0.072s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/iris_description/cmake/iris_descriptionConfig-version.cmake
+[0.072s] -- Up-to-date symlink: /home/harshita/quad/install/iris_description/share/iris_description/package.xml
+[0.074s] Invoked command in '/home/harshita/quad/build/iris_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/harshita/quad/build/iris_description

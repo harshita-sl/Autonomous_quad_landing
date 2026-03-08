@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="inertial_macros.xacro"/>
+
+    <!-- Iris Quadcopter Properties -->
+    <xacro:property name="body_mass" value="1.5"/>
+    <xacro:property name="body_radius" value="0.1"/>
+    <xacro:property name="arm_length" value="0.13"/>
+    <xacro:property name="rotor_offset_top" value="0.023"/>
+
+    <!-- Colors -->
+    <material name="blue">
+        <color rgba="0.0 0.3 0.8 1.0"/>
+    </material>
+
+    <material name="black">
+        <color rgba="0.1 0.1 0.1 1.0"/>
+    </material>
+
+    <material name="white">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+    </material>
+
+    <!-- Base Link (Main Body) -->
+    <link name="base_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://iris_description/meshes/iris.stl" scale="1 1 1"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://iris_description/meshes/iris.stl" scale="1 1 1"/>
+            </geometry>
+        </collision>
+
+        <!-- Inertial properties for quadcopter body -->
+        <xacro:inertial_custom mass="${body_mass}" 
+                               ixx="0.029125" ixy="0.0" ixz="0.0"
+                               iyy="0.029125" iyz="0.0" izz="0.055225">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_custom>
+    </link>
+
+    <!-- Gazebo reference for base_link -->
+    <gazebo reference="base_link">
+        <material>Gazebo/DarkGrey</material>
+        <gravity>true</gravity>
+    </gazebo>
+
+    <!-- Rotor 0 (Front Right) -->
+    <xacro:macro name="rotor" params="rotor_number x_pos y_pos">
+        <link name="rotor_${rotor_number}">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <cylinder length="0.005" radius="0.1"/>
+                </geometry>
+                <material name="black"/>
+            </visual>
+
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <cylinder length="0.005" radius="0.1"/>
+                </geometry>
+            </collision>
+
+            <xacro:inertial_cylinder mass="0.005" length="0.005" radius="0.1">
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+            </xacro:inertial_cylinder>
+        </link>
+
+        <joint name="rotor_${rotor_number}_joint" type="continuous">
+            <parent link="base_link"/>
+            <child link="rotor_${rotor_number}"/>
+            <origin xyz="${x_pos} ${y_pos} ${rotor_offset_top}" rpy="0 0 0"/>
+            <axis xyz="0 0 1"/>
+            <limit effort="1000.0" velocity="1000.0"/>
+        </joint>
+
+        <gazebo reference="rotor_${rotor_number}">
+            <material>Gazebo/Black</material>
+        </gazebo>
+    </xacro:macro>
+
+    <!-- Instantiate all 4 rotors -->
+    <xacro:rotor rotor_number="0" x_pos="${arm_length}" y_pos="${arm_length}"/>
+    <xacro:rotor rotor_number="1" x_pos="-${arm_length}" y_pos="${arm_length}"/>
+    <xacro:rotor rotor_number="2" x_pos="${arm_length}" y_pos="-${arm_length}"/>
+    <xacro:rotor rotor_number="3" x_pos="-${arm_length}" y_pos="-${arm_length}"/>
+
+</robot>

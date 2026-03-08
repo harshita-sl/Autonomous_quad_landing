@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Gazebo ROS2 Control Plugin (if using ros2_control) -->
+    <xacro:macro name="gazebo_ros2_control" params="use_ros2_control">
+        <xacro:if value="${use_ros2_control}">
+            <gazebo>
+                <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+                    <parameters>$(find iris_description)/config/controllers.yaml</parameters>
+                </plugin>
+            </gazebo>
+        </xacro:if>
+    </xacro:macro>
+
+    <!-- Gazebo Physics Properties -->
+    <gazebo>
+        <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+            <ros>
+                <namespace>iris</namespace>
+                <remapping>model_states:=model_states</remapping>
+                <remapping>link_states:=link_states</remapping>
+            </ros>
+            <update_rate>10.0</update_rate>
+        </plugin>
+    </gazebo>
+
+</robot>
